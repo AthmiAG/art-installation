@@ -1,0 +1,10 @@
+flask
+torch
+torchvision
+torchaudio
+diffusers
+transformers
+opencv-python
+pillow
+numpy
+uuid
