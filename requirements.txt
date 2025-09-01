@@ -1,11 +1,7 @@
 flask
 gunicorn
 torch
-torchvision
-torchaudio
 diffusers
 transformers
+Pillow
 opencv-python
-pillow
-numpy
-uuid
