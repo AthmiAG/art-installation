@@ -1,0 +1,20 @@
+
+{% extends "base.html" %}
+{% block content %}
+<h2>Saved Images</h2>
+<div class="gallery">
+  {% for f in files %}
+  <div class="card">
+    <img src="{{ url_for('static', filename='saved/' + f) }}" alt="{{ f }}"/>
+    <div class="card-actions">
+  <button class="btn danger" data-fn="{{ f }}" onclick="deleteImage('{{ f }}')">Delete Image</button>
+  <button class="btn" onclick="generateSketch('{{ f }}')">Generate Real Sketch</button>
+  <button class="btn" onclick="generateImage('{{ f }}')">Generate an Image</button>
+</div>
+  </div>
+  {% else %}
+    <p>No images yet. Save from any mode to see them here.</p>
+  {% endfor %}
+</div>
+<script src="{{ url_for('static', filename='js/saved.js') }}"></script>
+{% endblock %}

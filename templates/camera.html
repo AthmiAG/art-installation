@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="panel">
+  <!-- Camera feed with overlay -->
+  <div class="camera-wrap">
+    <video id="video" autoplay playsinline></video>
+    <canvas id="overlay" width="640" height="480"></canvas>
+  </div>
+
+  <!-- Separate drawing canvas -->
+  <div class="draw-wrap">
+    <canvas id="drawCanvas" width="640" height="480"></canvas>
+  </div>
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h3>Gesture Controls</h3>
+    <ul class="help">
+      <li>1 finger: Draw</li>
+      <li>2 fingers: Pause</li>
+      <li>3 fingers: Toggle Eraser</li>
+    </ul>
+    <div class="tool-section">
+      <button id="clearBtn" class="btn danger">Clear</button>
+      <button id="saveBtn" class="btn primary">Save</button>
+    </div>
+  </aside>
+</div>
+
+<!-- MediaPipe Hands -->
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js"></script>
+<script src="{{ url_for('static', filename='js/camera.js') }}"></script>
+{% endblock %}

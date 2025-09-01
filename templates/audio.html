@@ -1,0 +1,23 @@
+
+{% extends "base.html" %}
+{% block content %}
+<div class="panel">
+  <canvas id="drawCanvas" width="900" height="520"></canvas>
+  <aside class="sidebar">
+    <h3>Voice Controls</h3>
+    <p class="small">Say commands like: "start", "stop", "color red/blue/green", "undo", "redo", "clear", "save", "line 100", "left 50", "right 50", "up 50", "down 50", "circle 40".</p>
+    <div class="tool-section">
+      <button id="startVoice" class="btn primary">Start Listening</button>
+      <button id="stopVoice" class="btn secondary">Stop Listening</button>
+    </div>
+    <div class="tool-section">
+      <button id="undoBtn" class="btn">Undo</button>
+      <button id="redoBtn" class="btn">Redo</button>
+      <button id="clearBtn" class="btn danger">Clear</button>
+      <button id="saveBtn" class="btn primary">Save</button>
+    </div>
+    <div id="status" class="status">Idle</div>
+  </aside>
+</div>
+<script src="{{ url_for('static', filename='js/audio.js') }}"></script>
+{% endblock %}

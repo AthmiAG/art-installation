@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <h1>Art Installation</h1>
+  <p class="tagline">Unleash creativity through interaction — paint, gesture, speak, and imagine.</p>
+
+  <div class="mode-grid">
+    <div class="mode-card">
+      <a class="btn primary" href="{{ url_for('mouse_mode') }}">Mouse Mode</a>
+      <p class="quote">"Every click is a brushstroke."</p>
+    </div>
+
+    <div class="mode-card">
+      <a class="btn primary" href="{{ url_for('camera_mode') }}">Camera Mode</a>
+      <p class="quote">"Your Lens...Your canvas"</p>
+    </div>
+
+    <div class="mode-card">
+      <a class="btn primary" href="{{ url_for('audio_mode') }}">Audio Mode</a>
+      <p class="quote">"Let your voice become color."</p>
+    </div>
+
+    <div class="mode-card">
+      <a class="btn primary" href="{{ url_for('saved_images') }}">Saved Images</a>
+      <p class="quote">"Where memories turn into masterpieces."</p>
+    </div>
+
+    <div class="mode-card">
+      <a class="btn primary" href="{{ url_for('text_mode') }}">Text Mode</a>
+      <p class="quote">"Write it. See it. Live it."</p>
+    </div>
+  </div>
+</section>
+{% endblock %}
